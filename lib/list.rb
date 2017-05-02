@@ -3,8 +3,8 @@ class List
   attr_accessor(:name, :id)
 
   def initialize(attributes)
-    self.name = attributes.fetch(:name)
-    self.id = attributes.fetch(:id)
+    @name = attributes.fetch(:name)
+    @id = attributes.fetch(:id)
   end
 
   def List.all
@@ -19,8 +19,8 @@ class List
   end
 
   def save
-    result = DB.exec("INSERT INTO lists (name) VALUES ('#{self.name}') RETURNING id;")
-    self.id = result.first.fetch("id").to_i
+    result = DB.exec("INSERT INTO lists (name) VALUES ('#{@name}') RETURNING id;")
+    @id = result.first.fetch("id").to_i
   end
 
   def ==(another_list)

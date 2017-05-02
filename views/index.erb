@@ -1,12 +1,7 @@
-<h1>To Do List</h1>
 
-<% @tasks.each do |task| %>
-<li><%= task.description %></li>
-<% end %>
+<h1>Welcome to the To Do App</h1>
 
-<button id="new-task" type="button" class="btn btn-default">New task!</button>
-
-<form class="new-task" action="/tasks/new" method="post">
-  <label for="description">Putt stuff in!</label>
-  <input type="text" name="description">
-</form>
+<div class="container">
+  <a href="/lists">View All Lists</a>
+  <a href="/lists/new">Add New List</a>
+</div>
